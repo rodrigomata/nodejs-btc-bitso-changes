@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/rodrigomata/nodejs-btc-bitso-changes.svg?branch=master)
+
 # NodeJS BITSO Bitcoin changes
 NodeJS application that shows Bitcoin's behaviour through the day
 
@@ -36,11 +38,17 @@ $ npm start
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 
+### Run in Production
+
+Navigate to [HerokuApp](https://guarded-retreat-91089.herokuapp.com/)
+
 ### Testing
 
 ```sh
 $ npm test
 ```
+PS: Integration tests have been disabled
+TODO: Add Unit tests
 
 ## License
 
