@@ -1,3 +1,4 @@
+'use strict';
 /**
  * CurrencyController.js
  * @author Rodrigo Mata

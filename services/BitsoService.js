@@ -1,3 +1,4 @@
+'use strict';
 /**
  * BitsoService.js
  * @author Rodrigo Mata

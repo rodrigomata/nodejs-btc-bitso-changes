@@ -1,3 +1,4 @@
+'use strict';
 /**
  * bitso-mapper.js
  * @author Rodrigo Mata
@@ -15,5 +16,5 @@ module.exports = BitsoMapper => {
 
   // Filters only useful information
   BitsoMapper.map = data => mapper.map(data);
-  
+
 };
