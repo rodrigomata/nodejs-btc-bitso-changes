@@ -7,14 +7,13 @@
 
 const ObjectMapper = require('two-way-object-mapper');
 
-module.exports = BitsoMapper => {
+module.exports = {
 
-  const mapper = new ObjectMapper()
-    .addPropertyMapping({from: 'payload.book', to: 'currency'})
-    .addPropertyMapping({from: 'payload.last', to: 'value'})
-    .addPropertyMapping({from: 'payload.created_at', to: 'created_at'});
-
-  // Filters only useful information
-  BitsoMapper.map = data => mapper.map(data);
+  build: (() => {
+    return new ObjectMapper()
+      .addPropertyMapping({from: 'payload.book', to: 'currency'})
+      .addPropertyMapping({from: 'payload.last', to: 'value'})
+      .addPropertyMapping({from: 'payload.created_at', to: 'created_at'});
+  })()
 
 };

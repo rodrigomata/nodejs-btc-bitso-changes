@@ -8,7 +8,7 @@
 const mongoose = require('mongoose');
 
 const BitcoinSchema = new mongoose.Schema({
-  currency: Number,
+  currency: String,
   value: Number,
   created_at: Date
 });

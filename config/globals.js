@@ -10,7 +10,7 @@ const { MONGO_URI } = process.env;
 
 module.exports = {
   API: {
-    bitso: 'https://api.bitso.com/v3/ticker/'
+    bitso: 'https://api.bitso.com/v3/ticker/?book=btc_mxn'
   },
   mongoURI: MONGO_URI
 };

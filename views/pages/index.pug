@@ -1,5 +1,31 @@
 html
   head
     title= title
+    link(rel='stylesheet',
+          href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+          integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm',
+          crossorigin='anonymous')
   body
-    h1= message
+    .container
+      h1.display-1 #{title}
+      p.lead NodeJS application that displays Bitcoin history though BITSO API
+
+      .d-flex.justify-content-center
+        canvas(id='btc-history', width='400', height='400')
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js')
+  script(type='text/javascript').
+    var ctx = document.getElementById('btc-history');
+    var myLineChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: !{JSON.stringify(labels)},
+        datasets: [{
+          label: 'MXN per Bitcoin',
+          fill: false,
+          lineTension: 0.1,
+          borderColor: 'rgb(15, 150, 25)',
+          data: !{JSON.stringify(data)}
+        }]
+      }
+    });

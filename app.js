@@ -18,6 +18,10 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 // Only work when connected to the DB
 db.once('open', () => {
+  // Start fetching from Bitso API every 5 minutes
+  cron.schedule('*/5 * * * *', () => require('./services/BitsoService').fetch());
+
+  // Start server
   express()
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
@@ -25,10 +29,4 @@ db.once('open', () => {
     .use(require('./config/routes'))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-  // Start fetching from Bitso API
-  const BitsoService = require('./services/BitsoService');
-  cron.schedule('* * * * *', () => {
-    console.log('running a task every minute');
-    BitsoService.fetch();
-  });
 });
