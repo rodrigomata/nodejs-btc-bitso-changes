@@ -11,8 +11,11 @@
     "test": "node tests/test.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "chart.js": "^2.7.2",
     "express": "^4.15.2",
     "mongoose": "^5.0.14",
+    "node-cron": "^1.2.1",
     "pug": "^2.0.3",
     "require-dir": "^1.0.0",
     "two-way-object-mapper": "^1.1.0"

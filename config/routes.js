@@ -7,7 +7,9 @@
 
 const router = require('express').Router();
 
+const CurrencyController = require('../controllers/CurrencyController');
+
 // Index 
-router.get('/', )
+router.get('/', CurrencyController.index);
 
 module.exports = router;
