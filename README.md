@@ -4,7 +4,6 @@ NodeJS application that shows Bitcoin's behaviour through the day
 ## Requirements
 
 - [NodeJS](http://nodejs.org/) 8.x
-- [Heroku CLI](https://cli.heroku.com/)
 - MongoDB
 
 ### Commit Style

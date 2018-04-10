@@ -18,8 +18,10 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 // Only work when connected to the DB
 db.once('open', () => {
-  // Start fetching from Bitso API every 5 minutes
-  cron.schedule('*/5 * * * *', () => require('./services/BitsoService').fetch());
+  if(process.env.ENVIRONMENT !== 'testing') {
+    // Start fetching from Bitso API every 5 minutes
+    cron.schedule('*/5 * * * *', () => require('./services/BitsoService').fetch());
+  }
 
   // Start server
   express()
