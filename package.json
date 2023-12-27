@@ -11,7 +11,7 @@
     "test": "node tests/test.js"
   },
   "dependencies": {
-    "axios": "^0.25.0",
+    "axios": "^1.6.3",
     "express": "^4.17.2",
     "moment": "^2.29.1",
     "mongoose": "^6.4.6",
